@@ -41,15 +41,13 @@
       const ui = SwaggerUIBundle({
         url: "swagger.json",
         dom_id: '#swagger-ui',
-        tryItOutEnabled: false,
+        host: '',
         deepLinking: true,
         presets: [
           SwaggerUIBundle.presets.apis,
           SwaggerUIStandalonePreset
         ],
-        plugins: [
-          SwaggerUIBundle.plugins.DownloadUrl
-        ],
+        plugins: [],
         layout: "StandaloneLayout"
       })
       // End Swagger UI call region
