@@ -38,21 +38,21 @@
     <script>
     window.onload = function() {
       // Begin Swagger UI call region
-      const ui = SwaggerUIBundle({
+      window.ui = SwaggerUIBundle({
         url: "swagger.json",
         dom_id: '#swagger-ui',
-        host: '',
         deepLinking: true,
         presets: [
           SwaggerUIBundle.presets.apis,
           SwaggerUIStandalonePreset
         ],
         plugins: [],
-        layout: "StandaloneLayout"
-      })
-      // End Swagger UI call region
-
-      window.ui = ui
+        layout: "StandaloneLayout",
+        onComplete: function(swaggerApi, swaggerUi) {
+          swaggerApi.setBasePath('/betabazaar')
+          swaggerUi.api.setBasePath('/betabazaar')
+          window.ui.api.setBasePath('/betabazaar');
+        }})
     }
   </script>
   </body>
